@@ -40,6 +40,7 @@ const Model = props => {
         </div>
         <div className='actions'>
           <Pagination
+            current={current}
             perPage={perPage}
             totalArtists={props.artists.length}
             paginate={paginate}
