@@ -1,0 +1,3 @@
+export const FETCH_GENRES = 'FETCH_GENRES';
+export const FETCH_ARTISTS = 'FETCH_ARTISTS';
+export const CLEAR_ARTISTS = 'CLEAR_ARTISTS';
