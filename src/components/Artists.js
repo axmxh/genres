@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchArtists, clearArtists } from '../actions';
 import history from '../history';
+import NotFound from './NotFound';
 
 import Modal from './Modal';
 
@@ -16,14 +17,18 @@ class Artists extends Component {
 
   render() {
     if (this.props.artists) {
-      return (
-        <div>
-          <Modal
-            artists={this.props.artists}
-            onDismiss={() => history.push('/')}
-          />
-        </div>
-      );
+      if (localStorage.getItem('ids').includes(this.props.match.params.id)) {
+        return (
+          <div>
+            <Modal
+              artists={this.props.artists}
+              onDismiss={() => history.push('/')}
+            />
+          </div>
+        );
+      } else {
+        return <NotFound />;
+      }
     }
     return <Modal content='Loading...' />;
   }

@@ -11,13 +11,21 @@ const StyledLink = styled(Link)`
 const GenresContainer = styled.div`
   margin-top: 30px;
 `;
+
 class Genres extends Component {
+  genresIds = [];
+
   componentDidMount() {
     this.props.fetchGenres();
+    this.componentDidUpdate();
+  }
+  componentDidUpdate() {
+    localStorage.setItem('ids', this.genresIds);
   }
 
   renderGenres() {
     return this.props.genres.map(genre => {
+      this.genresIds.push(genre.id);
       return (
         <StyledLink
           to={`/${genre.id}/artists`}

@@ -36,6 +36,7 @@ const Model = props => {
         <i className='close icon' onClick={props.onDismiss}></i>
         <div className='header'>Artists</div>
         <div className='content'>
+          {props.content}
           <div className='ui five cards'>{renderArtists()}</div>
         </div>
         <div className='actions'>
