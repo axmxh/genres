@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchGenres } from '../actions';
+import styled from 'styled-components';
 
-//import GenreCard from './GnoreCard';
+const StyledLink = styled(Link)`
+  cursor: pointer;
+`;
 
+const GenresContainer = styled.div`
+  margin-top: 30px;
+`;
 class Genres extends Component {
   componentDidMount() {
     this.props.fetchGenres();
@@ -13,10 +19,8 @@ class Genres extends Component {
   renderGenres() {
     return this.props.genres.map(genre => {
       return (
-        <Link
-          //onClick={() => this.handleClick(genre.id)}
+        <StyledLink
           to={`/${genre.id}/artists`}
-          style={{ cursor: 'pointer' }}
           className='ui fluid card'
           key={genre.id}
         >
@@ -26,17 +30,19 @@ class Genres extends Component {
           <div className='content'>
             <span className='header'>{genre.name}</span>
           </div>
-        </Link>
+        </StyledLink>
       );
     });
   }
 
   render() {
     return (
-      <div className='ui grid' style={{ marginTop: '30px' }}>
-        <h2 className='ui header'>Select Genre</h2>
-        <div className='ui eight cards'>{this.renderGenres()}</div>
-      </div>
+      <GenresContainer>
+        <div className='ui grid'>
+          <h2 className='ui header'>Select Genre</h2>
+          <div className='ui eight cards'>{this.renderGenres()}</div>
+        </div>
+      </GenresContainer>
     );
   }
 }

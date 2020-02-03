@@ -1,4 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const PaginationContainer = styled.span`
+  cursor: pointer;
+`;
 
 const Pagination = ({ perPage, totalArtists, paginate, current }) => {
   const pages = [];
@@ -9,14 +14,13 @@ const Pagination = ({ perPage, totalArtists, paginate, current }) => {
   return (
     <div className='ui pagination menu'>
       {pages.map(page => (
-        <span
+        <PaginationContainer
           key={page}
-          style={{ cursor: 'pointer' }}
           onClick={() => paginate(page)}
           className={current === page ? 'active item' : 'item'}
         >
           {page}
-        </span>
+        </PaginationContainer>
       ))}
     </div>
   );
