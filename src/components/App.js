@@ -12,7 +12,7 @@ const App = () => {
       <Router history={history}>
         <Switch>
           <Route path='/' exact component={Genres} />
-          <Route path='/:id/artists' component={Artists} />
+          <Route path='/:id' exact component={Artists} />
           <Route component={NotFound} />
         </Switch>
       </Router>

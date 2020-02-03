@@ -28,7 +28,7 @@ class Genres extends Component {
       this.genresIds.push(genre.id);
       return (
         <StyledLink
-          to={`/${genre.id}/artists`}
+          to={`/${genre.id}`}
           className='ui fluid card'
           key={genre.id}
         >
