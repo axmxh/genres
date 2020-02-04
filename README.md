@@ -1,6 +1,9 @@
-# Demo [https://axmxh.github.io/genres](https://axmxh.github.io/genres) 
+Demo [https://axmxh.github.io/genres](https://axmxh.github.io/genres) 
 
-In the project directory, you can run:
+After Cloning this repo you can run:
+### `yarn install`
+
+### `cd genres`
 
 ### `yarn start`
 
