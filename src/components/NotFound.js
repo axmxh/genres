@@ -23,7 +23,7 @@ const LinkContainer = styled(Link)`
 const NotFound = () => {
   return (
     <Container>
-      <LinkContainer link to='/'>
+      <LinkContainer to='/'>
         {`< go back`}
       </LinkContainer>
       <NotFoundContainer>Page Not Found :\</NotFoundContainer>
