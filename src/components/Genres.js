@@ -17,15 +17,16 @@ class Genres extends Component {
 
   componentDidMount() {
     this.props.fetchGenres();
-    this.componentDidUpdate();
   }
-  componentDidUpdate() {
-    localStorage.setItem('ids', this.genresIds);
+  componentDidUpdate(prevProps) {
+    if (prevProps.genres !== this.props.genres) {
+      this.genresIds = this.props.genres.map(genre => genre.id);
+      localStorage.setItem('ids', this.genresIds);
+    }
   }
 
   renderGenres() {
     return this.props.genres.map(genre => {
-      this.genresIds.push(genre.id);
       return (
         <StyledLink
           to={`/${genre.id}`}
