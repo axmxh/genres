@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Pagination from './Pagination';
 
-const Model = props => {
+const Modal = props => {
   const [current, setCurrent] = useState(1);
   const [perPage] = useState(10);
 
@@ -53,4 +53,4 @@ const Model = props => {
   );
 };
 
-export default Model;
+export default Modal;
