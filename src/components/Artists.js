@@ -17,7 +17,8 @@ class Artists extends Component {
 
   render() {
     if (this.props.artists) {
-      if (localStorage.getItem('ids').includes(this.props.match.params.id)) {
+      const ids = localStorage.getItem('ids') || '';
+      if (ids.includes(this.props.match.params.id)) {
         return (
           <div>
             <Modal
