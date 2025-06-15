@@ -1,10 +1,7 @@
 Demo [https://axmxh.github.io/genres](https://axmxh.github.io/genres) 
 
-After Cloning this repo you can run:
+After cloning this repo you can run the following commands from the repository root:
 ### `yarn install`
-
-### `cd genres`
-
 ### `yarn start`
 
 Runs the app in the development mode.<br />
